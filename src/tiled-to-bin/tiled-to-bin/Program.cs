@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 
-namespace tiled_to_bin
+namespace TiledToBinary
 {
     public static class Program
     {

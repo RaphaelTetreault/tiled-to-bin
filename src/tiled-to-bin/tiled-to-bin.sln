@@ -5,6 +5,10 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tiled-to-bin", "tiled-to-bin\tiled-to-bin.csproj", "{45C4247D-F177-4155-9E67-F32AB1A25BF3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manifold", "..\..\..\n64-mksprite\libs\Manifold.Core\src\Manifold\Manifold.csproj", "{3365EDEE-59CD-46C0-9F26-744E38624204}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manifold.IO", "..\..\..\n64-mksprite\libs\Manifold.Core\src\Manifold\Manifold.IO\Manifold.IO.csproj", "{1E196EE3-451F-4449-9134-F382412E6C29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{45C4247D-F177-4155-9E67-F32AB1A25BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45C4247D-F177-4155-9E67-F32AB1A25BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45C4247D-F177-4155-9E67-F32AB1A25BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3365EDEE-59CD-46C0-9F26-744E38624204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3365EDEE-59CD-46C0-9F26-744E38624204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3365EDEE-59CD-46C0-9F26-744E38624204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3365EDEE-59CD-46C0-9F26-744E38624204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E196EE3-451F-4449-9134-F382412E6C29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E196EE3-451F-4449-9134-F382412E6C29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E196EE3-451F-4449-9134-F382412E6C29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E196EE3-451F-4449-9134-F382412E6C29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

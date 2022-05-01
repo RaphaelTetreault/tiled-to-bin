@@ -1,4 +1,4 @@
-﻿namespace tiled_to_bin
+﻿namespace TiledToBinary
 {
     internal class TiledParseException : Exception
     {
