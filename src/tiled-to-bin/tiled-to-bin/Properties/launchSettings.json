@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "tiled-to-bin": {
+      "commandName": "Project",
+      "commandLineArgs": "-i D:\\desktop\\test.tmx"
+    }
+  }
+}
