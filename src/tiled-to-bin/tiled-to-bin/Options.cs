@@ -13,9 +13,15 @@ namespace tiled_to_bin
         {
             public const string Input =
                 "The input Tiled XML file";
+
+            public const string SizeInt =
+                "How many bytes integers are serialized with.";
         }
 
         [Option('i', "input", Required = true, HelpText = Help.Input)]
         public string Input { get; set; } = string.Empty;
+
+        [Option('s', "sizeInt", Min = 1, HelpText = Help.Input)]
+        public byte SizeInt { get; set; } = 1;
     }
 }
