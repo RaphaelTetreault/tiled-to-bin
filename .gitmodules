@@ -1,3 +1,6 @@
 [submodule "libs/Manifold.Core"]
 	path = libs/Manifold.Core
 	url = https://github.com/RaphaelTetreault/Manifold.Core
+[submodule "libs/Manifold.Tiled"]
+	path = libs/Manifold.Tiled
+	url = https://github.com/RaphaelTetreault/Manifold.Tiled.git
