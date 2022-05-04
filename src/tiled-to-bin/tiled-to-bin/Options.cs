@@ -25,7 +25,7 @@ namespace TiledToBinary
         [Option('i', "input", Required = true, HelpText = Help.Input)]
         public string Input { get; set; } = string.Empty;
 
-        [Option('s', "sizeInt", Min = 1, Max = 4, HelpText = Help.SizeInt)]
+        [Option('s', "sizeInt", HelpText = Help.SizeInt)]
         public byte SizeInt { get; set; } = 1;
 
         [Option('e', "Endianness", HelpText = Help.EndiannessStr)]

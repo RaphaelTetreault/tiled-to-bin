@@ -1,4 +1,6 @@
 ﻿using CommandLine;
+using Manifold.IO;
+using Manifold.Tiled;
 using System;
 using System.IO;
 using System.Linq;
@@ -25,53 +27,56 @@ namespace TiledToBinary
                 return;
             }
 
-            string xml = File.ReadAllText(inputPath);
-            var document = new XmlDocument();
-            document.LoadXml(xml);
+            var tmx = TMX.FromFile(inputPath);
+            Console.WriteLine("Success!");
 
-            var map = document.GetElementsByTagName("map")[0];
-            Console.WriteLine(map.Name);
-            Console.WriteLine(map.InnerText);
+            //string xml = File.ReadAllText(inputPath);
+            //var document = new XmlDocument();
+            //document.LoadXml(xml);
 
-            var layers = document.GetElementsByTagName("layer");
-            foreach (XmlNode layer in layers)
-            {
-                var dataNode = layer.FirstChild;
-                var isDataNode = dataNode.Name == "data";
-                if (!isDataNode)
-                    throw new TiledParseException();
+            //var map = document.GetElementsByTagName("map")[0];
+            //Console.WriteLine(map.Name);
+            //Console.WriteLine(map.InnerText);
 
-                var name = layer?.Attributes?.GetNamedItem("name")?.InnerText;
-                var id_str = layer?.Attributes?.GetNamedItem("id")?.InnerText;
-                var width_str = layer?.Attributes?.GetNamedItem("width")?.InnerText;
-                var height_str = layer?.Attributes?.GetNamedItem("height")?.InnerText;
-                var encoding_str = dataNode?.Attributes?.GetNamedItem("encoding")?.InnerText;
+            //var layers = document.GetElementsByTagName("layer");
+            //foreach (XmlNode layer in layers)
+            //{
+            //    var dataNode = layer.FirstChild;
+            //    var isDataNode = dataNode.Name == "data";
+            //    if (!isDataNode)
+            //        throw new TiledParseException();
 
-                var id = int.Parse(id_str);
-                var width = int.Parse(width_str);
-                var height = int.Parse(height_str);
-                var encoding = Enum.Parse<TiledEncoding>(encoding_str, true);
-                var tileIndexes = ParseIndices(encoding, dataNode?.InnerText);
+            //    var name = layer?.Attributes?.GetNamedItem("name")?.InnerText;
+            //    var id_str = layer?.Attributes?.GetNamedItem("id")?.InnerText;
+            //    var width_str = layer?.Attributes?.GetNamedItem("width")?.InnerText;
+            //    var height_str = layer?.Attributes?.GetNamedItem("height")?.InnerText;
+            //    var encoding_str = dataNode?.Attributes?.GetNamedItem("encoding")?.InnerText;
 
-                var tiledLayer = new TiledLayer()
-                {
-                    Name = name,
-                    ID = id,
-                    Width = width,
-                    Height = height,
-                    Encoding = encoding,
-                    TileIndexes = tileIndexes,
-                };
+            //    var id = int.Parse(id_str);
+            //    var width = int.Parse(width_str);
+            //    var height = int.Parse(height_str);
+            //    var encoding = Enum.Parse<TiledEncoding>(encoding_str, true);
+            //    var tileIndexes = ParseIndices(encoding, dataNode?.InnerText);
 
-                Console.WriteLine(tiledLayer.Name);
-                Console.WriteLine(tiledLayer.ID);
-                Console.WriteLine(tiledLayer.Width);
-                Console.WriteLine(tiledLayer.Height);
-                Console.WriteLine(tiledLayer.TotalTiles);
-                Console.WriteLine(tiledLayer.Encoding);
-                Console.WriteLine(tiledLayer.TileIndexes.Length);
-                Console.WriteLine();
-            }
+            //    var tiledLayer = new TiledLayer()
+            //    {
+            //        Name = name,
+            //        ID = id,
+            //        Width = width,
+            //        Height = height,
+            //        Encoding = encoding,
+            //        TileIndexes = tileIndexes,
+            //    };
+
+            //    Console.WriteLine(tiledLayer.Name);
+            //    Console.WriteLine(tiledLayer.ID);
+            //    Console.WriteLine(tiledLayer.Width);
+            //    Console.WriteLine(tiledLayer.Height);
+            //    Console.WriteLine(tiledLayer.TotalTiles);
+            //    Console.WriteLine(tiledLayer.Encoding);
+            //    Console.WriteLine(tiledLayer.TileIndexes.Length);
+            //    Console.WriteLine();
+            //}
         }
 
         public static ushort[] ParseIndices(TiledEncoding encoding, string data)
