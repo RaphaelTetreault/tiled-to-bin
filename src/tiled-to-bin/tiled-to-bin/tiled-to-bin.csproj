@@ -12,4 +12,9 @@
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libs\Manifold.Core\src\Manifold\Manifold.IO\Manifold.IO.csproj" />
+    <ProjectReference Include="..\..\..\libs\Manifold.Tiled\src\Manifold.Tiled\Manifold.Tiled\Manifold.Tiled.csproj" />
+  </ItemGroup>
+
 </Project>
